@@ -1,5 +1,6 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+import Route from './Route';
 
 import SingIn from '~/pages/SingIn';
 import SingUp from '~/pages/SignUp';
@@ -12,7 +13,7 @@ export default function Routes() {
       <Route path="/" exact component={SingIn} />
       <Route path="/register" component={SingUp} />
 
-      <Route path="/dashboard" component={Dashboard} />
+      <Route path="/dashboard" component={Dashboard} isPrivate />
     </Switch>
   );
 }
