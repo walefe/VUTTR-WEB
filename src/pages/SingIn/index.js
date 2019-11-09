@@ -1,7 +1,10 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
+
+import { signInRequest } from '~/store/modules/auth/action';
 
 import logo from '~/assets/tools.svg';
 
@@ -12,8 +15,10 @@ const schema = Yup.object().shape({
 });
 
 export default function SingIn() {
-  function handelSubmit(data) {
-    console.tron.log(data);
+  const dispatch = useDispatch();
+
+  function handelSubmit({ email }) {
+    dispatch(signInRequest(email));
   }
 
   return (
