@@ -36,6 +36,11 @@ export const Content = styled.div`
       align-self: center;
     }
 
+    span {
+      color: #f95e5a;
+      margin: 3px 3px;
+    }
+
     button {
       height: 30px;
       width: 325px;
