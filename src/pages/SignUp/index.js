@@ -1,9 +1,12 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
 import logo from '~/assets/tools.svg';
+
+import { signUpRequest } from '~/store/modules/auth/action';
 
 const schema = Yup.object().shape({
   name: Yup.string().required('* O nome é obrigatório'),
@@ -12,9 +15,11 @@ const schema = Yup.object().shape({
     .required('* O e-mail é obrigatório'),
 });
 
-export default function SingU() {
-  function handleSubmit(data) {
-    console.tron.log(data);
+export default function SingUp() {
+  const dispatch = useDispatch();
+
+  function handleSubmit({ name, email }) {
+    dispatch(signUpRequest(name, email));
   }
   return (
     <>
