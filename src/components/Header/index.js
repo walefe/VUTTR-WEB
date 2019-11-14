@@ -19,6 +19,7 @@ export default function Header() {
             <div>
               <strong>Walefe</strong>
             </div>
+            <button type="button">Sair</button>
           </Profile>
         </aside>
       </Content>
