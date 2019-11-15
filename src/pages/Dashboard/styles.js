@@ -11,6 +11,8 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   background: #fff;
+
+  width: 720px;
   padding: 10px 20px;
   height: auto;
   border-radius: 4px;
@@ -48,7 +50,6 @@ export const Header = styled.div`
 
     height: 30px;
     width: 71px;
-    margin-right: 16px;
 
     border: 0;
     border-radius: 4px;
@@ -70,7 +71,7 @@ export const Header = styled.div`
 export const Tool = styled.ul`
   padding: 10px 15px;
   border-radius: 4px;
-  background: #f5f4f6;
+  background: #ebeaed;
   margin-bottom: 15px;
 
   div {
@@ -88,22 +89,12 @@ export const Tool = styled.ul`
       align-items: center;
 
       height: 30px;
-      width: 71px;
-      font-size: 12px;
-
+      width: 30px;
       border: 0;
-      border-radius: 4px;
-      background: #365df0;
-      color: #fff;
-      font-weight: bold;
-      transition: background 0.2s;
-      &:hover {
-        background: ${darken(0.08, '#365df0')};
-      }
 
-      svg {
-        margin-right: 3px;
-      }
+      color: #8f8a9b;
+      font-weight: bold;
+      background: none;
     }
   }
 
