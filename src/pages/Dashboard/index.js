@@ -14,7 +14,7 @@ export default function Dashboard() {
           <nav>
             <div>
               <input className="tools" type="text" placeholder="search" />
-              <input type="checkbox" />
+              <input type="checkbox" name="tools" />
               <p>search in tags only</p>
             </div>
 
@@ -31,7 +31,6 @@ export default function Dashboard() {
               <a href="teste">TESTE</a>
               <button type="button">
                 <IoIosClose size={20} />
-                Remove
               </button>
             </div>
             <p>
@@ -47,7 +46,6 @@ export default function Dashboard() {
               <a href="teste">TESTE</a>
               <button type="button">
                 <IoIosClose size={20} />
-                Remove
               </button>
             </div>
             <p>
@@ -64,7 +62,6 @@ export default function Dashboard() {
               <a href="teste">TESTE</a>
               <button type="button">
                 <IoIosClose size={20} />
-                Remove
               </button>
             </div>
             <p>
@@ -79,7 +76,6 @@ export default function Dashboard() {
               <a href="teste">TESTE</a>
               <button type="button">
                 <IoIosClose size={20} />
-                Remove
               </button>
             </div>
             <p>
@@ -94,7 +90,6 @@ export default function Dashboard() {
               <a href="teste">TESTE</a>
               <button type="button">
                 <IoIosClose size={20} />
-                Remove
               </button>
             </div>
             <p>
@@ -109,7 +104,6 @@ export default function Dashboard() {
               <a href="teste">TESTE</a>
               <button type="button">
                 <IoIosClose size={20} />
-                Remove
               </button>
             </div>
             <p>
@@ -124,7 +118,6 @@ export default function Dashboard() {
               <a href="teste">TESTE</a>
               <button type="button">
                 <IoIosClose size={20} />
-                Remove
               </button>
             </div>
             <p>
@@ -139,7 +132,6 @@ export default function Dashboard() {
               <a href="teste">TESTE</a>
               <button type="button">
                 <IoIosClose size={20} />
-                Remove
               </button>
             </div>
             <p>
