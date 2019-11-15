@@ -41,6 +41,7 @@ export const Content = styled.div`
 
 export const Profile = styled.div`
   display: flex;
+  align-items: center;
 
   div {
     text-align: right;
