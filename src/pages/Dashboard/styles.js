@@ -12,14 +12,16 @@ export const Content = styled.div`
   flex-direction: column;
   background: #fff;
 
-  width: 720px;
   padding: 10px 20px;
-  height: auto;
+  height: 100%;
+  width: auto;
   border-radius: 4px;
 `;
 
 export const Header = styled.div`
   margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eee;
   display: flex;
   flex-direction: column;
 
@@ -68,11 +70,12 @@ export const Header = styled.div`
   }
 `;
 
-export const Tool = styled.ul`
+export const Tool = styled.li`
   padding: 10px 15px;
   border-radius: 4px;
-  background: #ebeaed;
   margin-bottom: 15px;
+
+  background: #ebeaed;
 
   div {
     display: flex;
@@ -84,10 +87,6 @@ export const Tool = styled.ul`
     }
 
     button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
       height: 30px;
       width: 30px;
       border: 0;
@@ -95,12 +94,29 @@ export const Tool = styled.ul`
       color: #8f8a9b;
       font-weight: bold;
       background: none;
+
+      svg {
+        margin-left: 15px;
+        margin-bottom: 10px;
+      }
     }
   }
 
   p {
-    margin-top: 10px;
     font-size: 12px;
+    max-width: 900px;
+    margin-bottom: 8px;
     color: #8f8a9b;
+  }
+
+  span {
+    background: #0000001a;
+    color: #170c3ae6;
+    margin-right: 5px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    height: 20px;
+    padding: 3px 4px;
   }
 `;
