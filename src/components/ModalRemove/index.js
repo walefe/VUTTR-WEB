@@ -1,10 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 import { IoIosClose } from 'react-icons/io';
+
+import api from '~/services/api';
 
 import { ModalsRemove, Content, PimaryButton, SecondButton } from './styles';
 
-export default function ModalRemove({ modalRemoveOpen, closeModalRemove }) {
+export default function ModalRemove({
+  modalRemoveOpen,
+  closeModalRemove,
+  idTool,
+}) {
+  async function handleRemoveTool({ idTool: id }) {
+    try {
+      await api.delete(`tools/${id}`);
+      toast.success('Tool, excluded!');
+      closeModalRemove();
+    } catch (err) {
+      toast.error('Could not delete tool.');
+      closeModalRemove();
+    }
+  }
+
   return (
     <ModalsRemove
       isOpen={modalRemoveOpen}
@@ -24,7 +42,9 @@ export default function ModalRemove({ modalRemoveOpen, closeModalRemove }) {
           <SecondButton type="button" onClick={closeModalRemove}>
             Cancel
           </SecondButton>
-          <PimaryButton type="button">Yes, remove </PimaryButton>
+          <PimaryButton type="button" onClick={() => handleRemoveTool(idTool)}>
+            Yes, remove
+          </PimaryButton>
         </footer>
       </Content>
     </ModalsRemove>
@@ -34,4 +54,5 @@ export default function ModalRemove({ modalRemoveOpen, closeModalRemove }) {
 ModalRemove.propTypes = {
   modalRemoveOpen: PropTypes.bool.isRequired,
   closeModalRemove: PropTypes.func.isRequired,
+  idTool: PropTypes.string.isRequired,
 };
