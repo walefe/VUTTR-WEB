@@ -15,6 +15,7 @@ export const Content = styled.div`
   padding: 10px 20px;
   height: 100%;
   width: auto;
+  min-width: 700px;
   border-radius: 4px;
 `;
 

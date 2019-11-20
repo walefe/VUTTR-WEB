@@ -8,6 +8,7 @@ import { Container, Header, Content, Tool } from './styles';
 
 export default function Dashboard() {
   const [tools, setTools] = useState([]);
+  const [idTool, setIdTools] = useState('');
   const [modalRemoveOpen, setModalRemoveOpen] = useState(false);
 
   useEffect(() => {
@@ -19,8 +20,9 @@ export default function Dashboard() {
     loadTools();
   }, []);
 
-  function openModalRemove() {
+  function openModalRemove(id) {
     setModalRemoveOpen(true);
+    setIdTools({ idTool: id });
   }
 
   function closeModalRemove() {
@@ -50,23 +52,24 @@ export default function Dashboard() {
 
         <ul>
           {tools.map(tool => (
-            <Tool key={tool.id}>
+            <Tool key={tool._id}>
               <div>
                 <a href={tool.link}>{tool.title}</a>
-                <button type="button" onClick={openModalRemove}>
+                <button type="button" onClick={() => openModalRemove(tool._id)}>
                   <IoIosClose size={20} />
                 </button>
-                <ModalRemove
-                  modalRemoveOpen={modalRemoveOpen}
-                  closeModalRemove={closeModalRemove}
-                />
               </div>
               <p>{tool.description}</p>
               {tool.tags.map(tag => (
-                <span>{tag}</span>
+                <span key={tag}>{tag}</span>
               ))}
             </Tool>
           ))}
+          <ModalRemove
+            modalRemoveOpen={modalRemoveOpen}
+            closeModalRemove={closeModalRemove}
+            idTool={idTool}
+          />
         </ul>
       </Content>
     </Container>
