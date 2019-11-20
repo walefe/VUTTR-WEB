@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { IoIosAdd, IoIosClose } from 'react-icons/io';
 
 import api from '~/services/api';
+import ModalRemove from '~/components/ModalRemove';
 
 import { Container, Header, Content, Tool } from './styles';
 
 export default function Dashboard() {
   const [tools, setTools] = useState([]);
+  const [modalRemoveOpen, setModalRemoveOpen] = useState(false);
 
   useEffect(() => {
     async function loadTools() {
@@ -16,6 +18,14 @@ export default function Dashboard() {
     }
     loadTools();
   }, []);
+
+  function openModalRemove() {
+    setModalRemoveOpen(true);
+  }
+
+  function closeModalRemove() {
+    setModalRemoveOpen(false);
+  }
 
   return (
     <Container>
@@ -43,9 +53,13 @@ export default function Dashboard() {
             <Tool key={tool.id}>
               <div>
                 <a href={tool.link}>{tool.title}</a>
-                <button type="button">
+                <button type="button" onClick={openModalRemove}>
                   <IoIosClose size={20} />
                 </button>
+                <ModalRemove
+                  modalRemoveOpen={modalRemoveOpen}
+                  closeModalRemove={closeModalRemove}
+                />
               </div>
               <p>{tool.description}</p>
               {tool.tags.map(tag => (
