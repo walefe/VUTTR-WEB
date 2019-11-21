@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { IoIosAdd, IoIosClose } from 'react-icons/io';
 
 import api from '~/services/api';
+
+import ModalAdd from '~/components/ModalAdd';
 import ModalRemove from '~/components/ModalRemove';
 
 import { Container, Header, Content, Tool } from './styles';
@@ -9,7 +11,9 @@ import { Container, Header, Content, Tool } from './styles';
 export default function Dashboard() {
   const [tools, setTools] = useState([]);
   const [idTool, setIdTools] = useState('');
+
   const [modalRemoveOpen, setModalRemoveOpen] = useState(false);
+  const [modalAddOpen, setModalAddOpen] = useState(false);
 
   useEffect(() => {
     async function loadTools() {
@@ -29,6 +33,14 @@ export default function Dashboard() {
     setModalRemoveOpen(false);
   }
 
+  function openModalAdd() {
+    setModalAddOpen(true);
+  }
+
+  function closeModalAdd() {
+    setModalAddOpen(false);
+  }
+
   return (
     <Container>
       <Content>
@@ -43,10 +55,14 @@ export default function Dashboard() {
               <p>search in tags only</p>
             </div>
 
-            <button type="button">
+            <button type="button" onClick={openModalAdd}>
               <IoIosAdd size={20} />
               Add
             </button>
+            <ModalAdd
+              modalAddOpen={modalAddOpen}
+              closeModalAdd={closeModalAdd}
+            />
           </nav>
         </Header>
 
