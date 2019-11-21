@@ -15,7 +15,11 @@ export default function ModalRemove({
   async function handleRemoveTool({ idTool: id }) {
     try {
       await api.delete(`tools/${id}`);
+
       toast.success('Tool, excluded!');
+
+      document.location.reload(true);
+
       closeModalRemove();
     } catch (err) {
       toast.error('Could not delete tool.');
