@@ -40,7 +40,7 @@ export const Header = styled.div`
       height: 25px;
       padding: 0 5px;
       margin-right: 5px;
-      border: 0;
+      border: 1px solid #ebeaed;
       border-radius: 4px;
       background: #f5f4f6;
     }
@@ -76,6 +76,7 @@ export const Tool = styled.li`
   border-radius: 4px;
   margin-bottom: 15px;
 
+  border: 1px solid #b1adb9;
   background: #ebeaed;
 
   div {
@@ -111,8 +112,8 @@ export const Tool = styled.li`
   }
 
   span {
-    background: #0000001a;
-    color: #170c3ae6;
+    background: #e1e7fd;
+    color: #365df0;
     margin-right: 5px;
     border-radius: 2px;
     font-size: 12px;
