@@ -21,7 +21,7 @@ VUTTR
 This app features all the latest tools and practices in web development!
 
 - ⚛ **React** — A library to build user interfaces
-- ♻ **Redux — State management with middleware
+- ♻ **Redux** — State management with middleware
 - 💅 **CSS** — styled-components
 - 🌸 **Reactotron** - Helps debugging process
 - 💖 **Lint** — ESlint/Prettier/Editor Config
